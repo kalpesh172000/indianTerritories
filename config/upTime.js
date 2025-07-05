@@ -16,3 +16,6 @@ const upTime = (upTime) => {
     const dateString = segments.join(", ");
     return dateString;
 };
+
+
+export default upTime;
