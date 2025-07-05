@@ -1,12 +1,12 @@
 {
     "name": "township",
     "version": "1.0.0",
-    "description": "",
+    "description": "Apr for getting the address of user in a form",
     "type": "module",
-    "main": "server.js",
+    "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "cross-env NODE_ENV=development nodemon server.js"
+        "start": "cross-env NODE_ENV=production node index.js",
+        "dev": "cross-env NODE_ENV=development nodemon index.js"
     },
     "keywords": [],
     "author": "",
@@ -16,14 +16,17 @@
         "dotenv": "^17.0.1",
         "express": "^5.1.0",
         "express-rate-limit": "^7.5.1",
+        "fast-xml-parser": "^5.2.5",
+        "he": "^1.2.0",
         "helmet": "^8.1.0",
+        "json-2-csv": "^5.5.9",
         "morgan": "^1.10.0",
         "mysql2": "^3.14.1",
         "response-time": "^2.3.3",
         "signale": "^1.4.0"
     },
     "devDependencies": {
-		"cross-env": "^7.0.3",
+        "cross-env": "^7.0.3",
         "nodemon": "^3.1.10"
-	}
+    }
 }

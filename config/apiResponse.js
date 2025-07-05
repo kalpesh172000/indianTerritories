@@ -1,4 +1,4 @@
-export const success = (message, result, time, statusCode) => {
+export const success = (message, result, /* time, */ statusCode) => {
     return {
         message,
         error: false,
