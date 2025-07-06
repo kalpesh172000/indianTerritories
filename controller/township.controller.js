@@ -52,8 +52,10 @@ export const districts = async (req, res) => {
     }
 
     try {
-        let { state_code } = req.body || {};
+        let state_code = req.query.state_code || req.body?.state_code;
+
         state_code = codeValidator(state_code, "state_code", res);
+
         if (!state_code) return;
 
         const result = await Districts.find(
@@ -80,8 +82,10 @@ export const towns = async (req, res) => {
     }
 
     try {
-        let { district_code } = req.body || {};
+        let district_code = req.query.district_code || req.body?.district_code;
+
         district_code = codeValidator(district_code, "district_code", res);
+
         if (!district_code) return;
 
         const result = await Towns.find(
