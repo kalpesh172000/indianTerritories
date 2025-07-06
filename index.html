@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Indian Territories API</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 2rem;
+        }
+
+        h1 {
+            color: #007BFF;
+        }
+
+        code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        section {
+            margin-top: 2rem;
+        }
+
+        ul {
+            line-height: 1.8;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 2rem;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Indian Territories API</h1>
+    <p>This API provides information about Indian states, districts, and towns.</p>
+
+    <section>
+        <h2>🔍 Endpoints</h2>
+        <ul>
+            <li><code><a href="/api/alive" target="_blank">GET /api/alive</a></code> — Check if the API is alive.</li>
+            <li><code><a href="/api/states" target="_blank">GET /api/states</a></code> — Get all Indian states.</li>
+            <li>
+                <code><a href="/api/districts?state_code=27" target="_blank">GET /api/districts?state_code=27</a></code>
+                — Get districts for state <code>27</code>.
+            </li>
+            <li>
+                <code>POST /api/districts</code> — Body: <code>{ "state_code": 27 }</code>
+            </li>
+            <li>
+                <code><a href="/api/towns?district_code=516" target="_blank">GET /api/towns?district_code=516</a></code>
+                — Get towns for district <code>516</code>.
+            </li>
+            <li>
+                <code>POST /api/towns</code> — Body: <code>{ "district_code": 516 }</code>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>📌 Notes</h2>
+        <ul>
+            <li>Use <code>state_code</code> and <code>district_code</code> as positive integers.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Deployed on <a href="https://vercel.com" target="_blank">Vercel</a></p>
+    </footer>
+</body>
+
+</html>

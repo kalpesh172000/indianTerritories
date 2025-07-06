@@ -10,10 +10,13 @@ import notFoundHandler from "./middlewares/notFoundHandler.js";
 import logger from "./config/logger.js";
 import township_alive from "./routes/township.routes.js";
 import { connectToMongodb } from "./config/mongodb.js";
+import path from "path";
+import { fileURLToPath } from "url";
 
 dotenv.config();
 
 const app = express();
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 connectToMongodb();
 
@@ -31,7 +34,8 @@ if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 app.set("trust proxy", 1);
 
 app.get("/", (req, res) => {
-    res.send("Welcome to API root");
+    res.sendFile(path.join(__dirname,"./index.html"));
+    /* res.send("Welcome to API root"); */
 });
 app.use("/api", township_alive);
 
