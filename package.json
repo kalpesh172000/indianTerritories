@@ -3,10 +3,10 @@
     "version": "1.0.0",
     "description": "Apr for getting the address of user in a form",
     "type": "module",
-    "main": "index.js",
+    "main": "server.js",
     "scripts": {
-        "start": "cross-env NODE_ENV=production node index.js",
-        "dev": "cross-env NODE_ENV=development nodemon index.js"
+        "start": "cross-env NODE_ENV=production node server.js",
+        "dev": "cross-env NODE_ENV=development nodemon server.js"
     },
     "keywords": [],
     "author": "",
@@ -20,6 +20,8 @@
         "he": "^1.2.0",
         "helmet": "^8.1.0",
         "json-2-csv": "^5.5.9",
+        "mongodb": "^6.17.0",
+        "mongoose": "^8.16.1",
         "morgan": "^1.10.0",
         "mysql2": "^3.14.1",
         "response-time": "^2.3.3",

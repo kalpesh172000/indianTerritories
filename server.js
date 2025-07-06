@@ -1,4 +1,5 @@
 import express from "express";
+import mongoose from "mongoose";
 import morgan from "morgan";
 import helmet from "helmet";
 import cors from "cors";
@@ -8,10 +9,14 @@ import rateLimiter from "./middlewares/limiter.js";
 import notFoundHandler from "./middlewares/notFoundHandler.js";
 import logger from "./config/logger.js";
 import township_alive from "./routes/township.routes.js";
+import { connectToMongodb } from "./config/mongodb.js";
 
 dotenv.config();
 
 const app = express();
+
+connectToMongodb();
+
 
 app.use(express.json());
 app.use(cors());
