@@ -3,8 +3,8 @@ import logger from "./logger.js";
 import "dotenv/config";
 
 export const connectToMongodb = () => {
-    logger.info(`Trying to connect to the database`);
     if (process.env.NODE_ENV === "development") {
+        logger.info(`Trying to connect to the local MongoDB database`);
         mongoose
             .connect(process.env.LOCAL_MONGO)
             .then(() => {
@@ -14,6 +14,7 @@ export const connectToMongodb = () => {
                 logger.error(err);
             });
     } else {
+        logger.info(`Trying to connect to the MongoDB Alas`);
         mongoose
             .connect(process.env.MONGO_URL)
             .then(() => {
