@@ -17,7 +17,6 @@ const app = express();
 
 connectToMongodb();
 
-
 app.use(express.json());
 app.use(cors());
 app.use(responseTime());
@@ -31,6 +30,9 @@ if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 // Enables Express to use X-Forwarded-For to get the client’s real IP address
 app.set("trust proxy", 1);
 
+app.get("/", (req, res) => {
+    res.send("Welcome to API root");
+});
 app.use("/api", township_alive);
 
 app.use(notFoundHandler);
